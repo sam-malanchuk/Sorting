@@ -55,13 +55,35 @@ def selection_sort( arr ):
 
     return arr
 
-print(selection_sort([5, 6, 1, 9, 7, 2, 3]))
+# print(selection_sort([5, 6, 1, 9, 7, 2, 3]))
 
 # TO-DO:  implement the Bubble Sort function below
+
+# Loop through the entire array and compare the current value
+# to the value to the right of it
+# If the current value is larger than the one to the right, swap them
+# Keep doing this until a swap does not happen.
+
 def bubble_sort( arr ):
-
+    swapped = True
+    # while swap happened
+        # loop through the array and compare values
+        # if value at current index is bigger than value at index to the right.
+            # swap them
+            # The largest value should end up at the end
+            # once that value is at the end then you just start the while over 
+            # keep doing this until a swap doesn't happen
+    while swapped:
+        swapped = False
+        for j in range(0, len(arr)-1):
+            if arr[j]>arr[j+1]:
+                cur_index = arr[j]
+                r_of_index = arr[j+1]
+                arr[j] = r_of_index
+                arr[j+1] = cur_index
+                swapped = True
+            
     return arr
-
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):

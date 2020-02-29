@@ -77,13 +77,13 @@ def bubble_sort( arr ):
         swapped = False
         for j in range(0, len(arr)-1):
             if arr[j]>arr[j+1]:
-                cur_index = arr[j]
-                r_of_index = arr[j+1]
-                arr[j] = r_of_index
-                arr[j+1] = cur_index
+                # Do swap
+                arr[j], arr[j+1] = arr[j+1], arr[j]
                 swapped = True
             
     return arr
+
+print(bubble_sort([6, 2, 8, 4]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):

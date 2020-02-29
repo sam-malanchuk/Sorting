@@ -38,6 +38,17 @@ def merge_sort( arr ):
 
     return arr
 
+print(merge_sort([2, 1, 3]))
+
+# Understand
+# grab a list and split it in half if > 1
+# grab two lists and compare them, take the smaller one into a seperate list,
+# Repeat untill one list is empty, then add the last item to the new list
+# keep grabbing 2 lists untill you've reassembled the data set
+
+# Plan
+# Execute
+# Review
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):

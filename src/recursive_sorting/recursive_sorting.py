@@ -35,10 +35,39 @@ def merge( arrA, arrB ):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
+    if len(arr) > 1:
+        middle = len(arr) // 2
+        right = arr[middle:]
+        left = arr[:middle]
+        merge_sort(left)
+        merge_sort(right)
+
+        left_pos = 0
+        right_pos = 0
+        arr_pos = 0
+
+        while left_pos < len(left) and right_pos < len(right):
+            if left[left_pos] < right[right_pos]:
+                arr[arr_pos] = left[left_pos]
+                left_pos += 1
+            else:
+                arr[arr_pos] = right[right_pos]
+                right_pos += 1
+            arr_pos += 1
+
+        while left_pos < len(left):
+            arr[arr_pos] = left[left_pos]
+            left_pos += 1
+            arr_pos += 1
+
+        while right_pos < len(right):
+            arr[arr_pos] = right[right_pos]
+            right_pos += 1
+            arr_pos += 1
 
     return arr
 
-print(merge_sort([2, 1, 3]))
+print(merge_sort([2, 5, 3, 8, 4, 1]))
 
 # Understand
 # grab a list and split it in half if > 1
